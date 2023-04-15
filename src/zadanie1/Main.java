@@ -1,27 +1,40 @@
-package utils;
+package zadanie1;
 
-import entity.Person;
+import com.google.gson.Gson;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
 
     public static void main(String[] args) {
 	// write your code here
-        Person[] person= FileService.readFile();
-        for(Person p:person)
+    String json=readFile();
+    ListOfMovies movies=new Gson().fromJson(json,ListOfMovies.class);
+    System.out.println(movies);
+
+
+
+    }
+    public static String readFile()
+    {
+        String json="";
+        try{
+            Path path= Paths.get("practice.json");
+            json= Files.readString(path);
+            System.out.println(json);
+
+        }catch (IOException e)
         {
-            System.out.println(p);
-            p.setId(1312);
+            e.printStackTrace();
         }
-        System.out.println();
-        FileService.writeFile(person);
-
-
-
+        return  json;
 
     }
-    private static void initPersonState(Person[] person)
-    { 
 
-    }
 
 }
