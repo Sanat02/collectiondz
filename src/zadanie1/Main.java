@@ -16,6 +16,12 @@ public class Main {
     String json=readFile();
     ListOfMovies movies=new Gson().fromJson(json,ListOfMovies.class);
     System.out.println(movies);
+    System.out.println();
+     movies.sortByDate();
+     System.out.println();
+     movies.sortByName();
+     System.out.println();
+     movies.sortByDirector();
 
 
 
