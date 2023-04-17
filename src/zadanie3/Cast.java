@@ -1,4 +1,4 @@
-package zadanie2;
+package zadanie3;
 
 public class Cast {
     private String fullName;

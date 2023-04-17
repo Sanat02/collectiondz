@@ -1,4 +1,4 @@
-package zadanie2;
+package zadanie3;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -7,21 +7,15 @@ import java.util.*;
 public class ListOfMovies {
     @SerializedName("movies")
     private List<Movies> movies;
-
-
-
-
-    public String moviePrint()
+    private String moviePrint()
     {
         StringBuilder res= new StringBuilder("");
         for(int i=0;i<movies.size();i++)
         {
             res.append(movies.get(i).toString()+"\n");
         }
-
         return res.toString();
     }
-
     @Override
     public String toString() {
         return "{" +
@@ -108,15 +102,12 @@ public class ListOfMovies {
               System.out.println("Actor:"+entry.getKey());
               System.out.println("MOVIES:["+entry.getValue()+"]");
               System.out.println();
-              System.out.println();
-
           }
     }
 
     public void getDirector()
     {
         Map<String,String> mp1=new HashMap<>();
-
         for(int i=0;i< movies.size();i++)
         {
             String str=String.valueOf(movies.get(i).getName());
@@ -128,16 +119,12 @@ public class ListOfMovies {
             else {
                 mp1.put(movies.get(i).getDierctorName(), str);
             }
-
-
         }
         for(Map.Entry<String,String> entry:mp1.entrySet())
         {
             System.out.println("Director:"+entry.getKey());
             System.out.println("MOVIES:["+entry.getValue()+"]");
             System.out.println();
-            System.out.println();
-
         }
     }
     public void getByDate()
@@ -155,15 +142,12 @@ public class ListOfMovies {
             else {
                 mp1.put(movies.get(i).getYear(), str);
             }
-
         }
         for(Map.Entry<String,String> entry:mp1.entrySet())
         {
             System.out.println("YEAR :"+entry.getKey());
             System.out.println("MOVIES:["+entry.getValue()+"]");
             System.out.println();
-            System.out.println();
-
         }
     }
 
@@ -191,13 +175,11 @@ public class ListOfMovies {
             System.out.println("Actor:"+entry.getKey());
             System.out.println("MOVIES:["+entry.getValue()+"]");
             System.out.println();
-            System.out.println();
         }
     }
     public void getActorRoleList2()
     {
         Map<String,String> mp1=new HashMap<>();
-
         for(int i=0;i< movies.size();i++)
         {
             String str="";
@@ -205,7 +187,6 @@ public class ListOfMovies {
             {
                 if(!mp1.isEmpty()&&mp1.containsKey(movies.get(i).getCast().get(j).getFullName()))
                 {
-
                     String newStr=","+String.valueOf("(role:"+movies.get(i).getCast().get(j).getRole()+")");
                     mp1.put(movies.get(i).getCast().get(j).getFullName(),mp1.get(movies.get(i).getCast().get(j).getFullName())+newStr);
                 }
@@ -221,9 +202,6 @@ public class ListOfMovies {
             System.out.println("Actor:"+entry.getKey());
             System.out.println("MOVIES:["+entry.getValue()+"]");
             System.out.println();
-            System.out.println();
         }
     }
-
-
 }

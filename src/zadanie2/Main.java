@@ -10,7 +10,7 @@ import java.nio.file.Paths;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+	// Были добавлены методы,которые указывались во втором задании
     String json=readFile();
     ListOfMovies movies=new Gson().fromJson(json, ListOfMovies.class);
     System.out.println(movies);
@@ -20,10 +20,9 @@ public class Main {
      movies.sortByName();
      System.out.println();
      movies.sortByDirector();
-     System.out.println("k");
+     System.out.println();
      movies.getActor();
-
-     System.out.println("j");
+     System.out.println();
      movies.getDirector();
      System.out.println("---------------------------");
      movies.getByDate();
@@ -31,8 +30,6 @@ public class Main {
      movies.getActorRole();
      System.out.println("---------------------------");
      movies.getActorRoleList2();
-
-
     }
     public static String readFile()
     {
@@ -40,8 +37,6 @@ public class Main {
         try{
             Path path= Paths.get("practice.json");
             json= Files.readString(path);
-            System.out.println(json);
-
         }catch (IOException e)
         {
             e.printStackTrace();

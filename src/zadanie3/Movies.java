@@ -1,4 +1,4 @@
-package zadanie2;
+package zadanie3;
 
 import com.google.gson.annotations.SerializedName;
 
